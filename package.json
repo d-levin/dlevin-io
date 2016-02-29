@@ -1,14 +1,10 @@
 {
   "name": "dlevin-io",
   "version": "1.0.0",
-  "description": "Basic server",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "Dependencies for dlevin-io",
+  "author": "Dennis Levin <dennis.a.levin@gmail.com>",
+  "main": "js/server.js",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "4.13.x"
   }
 }
