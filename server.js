@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
 var app = express();
 
 // Database connection
-var database = require('./config/database');
-mongoose.connect(database.url);
+// var database = require('./config/database');
+// mongoose.connect(database.url);
 
 // For local testing
 const PORT = process.env.PORT || 8080;
