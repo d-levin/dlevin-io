@@ -1,25 +1,27 @@
 // Dependencies
 const express = require('express');
-const mysql = require('mysql');
+// MongoDB
+const mongoose = require('mongoose');
 
-// Global variables
-var server = express();
+// Create app with Express
+var app = express();
 
-// Connection to local MySQL db
-var db = mysql.createConnection({
-  host:     '127.0.0.1',
-  user:     'root',
-  password: 'root',
-  database: 'gear_closet'
-});
+// Database connection
+var database = require('./config/database');
+mongoose.connect(database.url);
 
 // For local testing
-const TESTPORT = 8080;
+const PORT = process.env.PORT || 8080;
 
-server.get('/', function(req, res) {
-  res.send('Hello world!');
+// Serve static files
+app.use(express.static(__dirname + '/public'));
+
+// Send file on request
+app.get('*', function(req, res) {
+  res.sendFile('index.html');
 });
 
-server.listen(process.env.PORT || TESTPORT, function() {
+// Wait for requests
+app.listen(PORT, function() {
   console.log('Server is listening...')
 });

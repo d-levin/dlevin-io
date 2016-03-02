@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Dependencies for dlevin-io",
   "author": "Dennis Levin <dennis.a.levin@gmail.com>",
-  "main": "js/server.js",
+  "main": "server.js",
   "dependencies": {
-    "express": "4.13.x"
+    "express": "4.13.x",
+    "mongoose": "4.4.x"
   }
 }
