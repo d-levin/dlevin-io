@@ -14,7 +14,7 @@ mongoose.connect(database.url);
 const PORT = process.env.PORT || 8080;
 
 // Serve static files
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('/public'));
 
 // Send file on request
 app.get('*', function(req, res) {
