@@ -24,7 +24,7 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  background-color: #bcd5d1; }
+  background-color: #f3f2ef; }
 
 a {
   text-decoration: none; }
@@ -47,7 +47,10 @@ a {
 =            Header styles            =
 =====================================*/
 header {
-  background-color: #313837; }
+  background-color: #313837;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); }
   header > * {
     font-size: 16px;
     display: inline-block;
@@ -77,6 +80,7 @@ header {
       display: block;
       padding: 10px;
       transition: 0.15s ease;
+      letter-spacing: 2px;
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0);
       -webkit-border-radius: 2px;
@@ -85,6 +89,9 @@ header {
     header #navigation a:hover {
       border: 1px solid rgba(255, 255, 255, 0.6);
       background-color: rgba(255, 255, 255, 0.05); }
+    header #navigation a:active {
+      position: relative;
+      top: 1px; }
 
 /*=====  End of Header styles  ======*/
 /* Remove gap between inline-block elements */
@@ -99,7 +106,10 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #ba9077; }
+  background-color: #ba9077;
+  -webkit-box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.1); }
   footer ul {
     font-size: 0;
     width: 100%;
@@ -132,6 +142,7 @@ main {
   color: #313837; }
 
 section {
+  position: relative;
   margin-top: 30px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   background-color: rgba(255, 255, 255, 0.2);
@@ -142,9 +153,17 @@ section {
   border-radius: 3px;
   background-clip: padding-box; }
   section .section__container {
+    display: inline-block;
     overflow: auto;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.6); }
+    width: 100%;
+    padding: 20px; }
+  section .section__container:after {
+    font-size: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: ' '; }
   section .bottom-border {
     border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
   section h4 {
@@ -152,6 +171,9 @@ section {
     font-weight: 700;
     color: #fff;
     background-color: #546160;
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
     -webkit-border-top-left-radius: 3px;
     border-top-left-radius: 3px;
     -webkit-border-top-right-radius: 3px;
@@ -160,21 +182,20 @@ section {
   section > * {
     padding: 10px; }
 
-.list-item {
+#my-lists .list-item {
   float: left;
   width: 20%;
   min-height: 150px;
   padding: 10px; }
-  .list-item h5 {
+  #my-lists .list-item h5 {
     font-size: 16px;
     font-weight: 400;
     display: block;
     width: 100%;
     padding: 10px 0; }
-  .list-item .list-description {
+  #my-lists .list-item .list-description {
     font-weight: 300;
     display: block; }
-
 #my-lists #list-options {
   font-size: 0;
   text-align: right; }
@@ -194,23 +215,35 @@ section {
 #misc .misc__items {
   font-size: 0; }
   #misc .misc__items li {
-    display: inline-block; }
+    display: inline-block;
+    min-width: 25%;
+    margin-right: 20px;
+    text-align: center; }
+  #misc .misc__items li:last-child {
+    margin-right: 0; }
   #misc .misc__items > * {
     font-size: 16px; }
   #misc .misc__items a {
     font-weight: 400;
     display: block;
     padding: 10px;
-    color: #313837;
+    transition: 0.15s ease;
+    color: #fff;
+    background-color: #546160;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    background-clip: padding-box; }
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2); }
   #misc .misc__items a:hover {
-    color: #fff;
     background-color: #313837;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     background-clip: padding-box; }
+  #misc .misc__items a:active {
+    position: relative;
+    top: 1px; }
 
 /*=====  End of Main styles  ======*/
 /*=====================================

@@ -7,6 +7,7 @@ sans-serif;
 $default-font-size: 16px;
 $default-font-color: #595859;
 $dark-gray: #313837;
+$gray: #546160;
 $camo-green: #5a5c51;
 $salmon: #ba9077;
 $light-blue: #bcd5d1;
@@ -45,6 +46,13 @@ $transition: .15s ease;
             box-shadow: $offset-horizontal $offset-vertical $blur $color;
 }
 
+@mixin box-shadow-spread($offset-horizontal, $offset-vertical, $blur, $spread, $color)
+{
+    -webkit-box-shadow: $offset-horizontal $offset-vertical $blur $spread $color;
+       -moz-box-shadow: $offset-horizontal $offset-vertical $blur $spread $color;
+            box-shadow: $offset-horizontal $offset-vertical $blur $spread $color;
+}
+
 
 /*========================================
 =            Universal styles            =
@@ -76,8 +84,9 @@ body
 {
     font-family: $default-font-family;
     font-weight: 700;
+    //background-color: $light-blue;
 
-    background-color: $light-blue;
+    background-color: #f3f2ef;
 }
 
 a
@@ -114,6 +123,8 @@ a
 header
 {
     background-color: $dark-gray;
+
+    @include box-shadow-spread(0, 2px, 3px, 0, rgba(0,0,0,.2));
     > *
     {
         font-size: $default-font-size;
@@ -165,6 +176,7 @@ header
             padding: 10px;
 
             transition: $transition;
+            letter-spacing: 2px;
 
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0);
@@ -175,6 +187,11 @@ header
         {
             border: 1px solid rgba(255, 255, 255, .6);
             background-color: rgba(255, 255, 255, .05);
+        }
+        a:active
+        {
+            position: relative;
+            top: 1px;
         }
     }
 }
@@ -203,6 +220,8 @@ footer
     left: 0;
 
     background-color: $salmon;
+
+    @include box-shadow-spread(0, -2px, 3px, 0, rgba(0,0,0,.1));
     ul
     {
         font-size: 0;
@@ -264,6 +283,8 @@ main
 
 section
 {
+    position: relative;
+
     margin-top: 30px;
 
     border: $white-transparent-border;
@@ -273,11 +294,23 @@ section
     @include border-radius($section-border-radius);
     .section__container
     {
+        display: inline-block;
         overflow: auto;
 
+        width: 100%;
         padding: 20px;
+    }
+    .section__container:after
+    {
+        font-size: 0;
 
-        border-top: $white-transparent-border;
+        display: block;
+        visibility: hidden;
+        clear: both;
+
+        height: 0;
+
+        content: ' ';
     }
     .bottom-border
     {
@@ -289,8 +322,9 @@ section
         font-weight: 700;
 
         color: #fff;
-        background-color: #546160;
+        background-color: $gray;
 
+        @include box-shadow-spread(0, 2px, 3px, 0, rgba(0,0,0,.1));
         @include border-radius-top($section-border-radius);
     }
     > *
@@ -299,33 +333,33 @@ section
     }
 }
 
-.list-item
-{
-    float: left;
-
-    width: 20%;
-    min-height: 150px;
-    padding: 10px;
-    h5
-    {
-        font-size: 16px;
-        font-weight: 400;
-
-        display: block;
-
-        width: 100%;
-        padding: 10px 0;
-    }
-    .list-description
-    {
-        font-weight: 300;
-
-        display: block;
-    }
-}
 
 #my-lists
 {
+    .list-item
+    {
+        float: left;
+
+        width: 20%;
+        min-height: 150px;
+        padding: 10px;
+        h5
+        {
+            font-size: 16px;
+            font-weight: 400;
+
+            display: block;
+
+            width: 100%;
+            padding: 10px 0;
+        }
+        .list-description
+        {
+            font-weight: 300;
+
+            display: block;
+        }
+    }
     #list-options
     {
         font-size: 0;
@@ -365,6 +399,15 @@ section
         li
         {
             display: inline-block;
+
+            min-width: 25%;
+            margin-right: 20px;
+
+            text-align: center;
+        }
+        li:last-child
+        {
+            margin-right: 0;
         }
         > *
         {
@@ -378,16 +421,24 @@ section
 
             padding: 10px;
 
-            color: $dark-gray;
+            transition: $transition;
+
+            color: #fff;
+            background-color: $gray;
 
             @include border-radius(2px);
+            @include box-shadow-spread(0, 1px, 2px, 0, rgba(0,0,0,.2));
         }
         a:hover
         {
-            color: #fff;
             background-color: $dark-gray;
 
             @include border-radius(2px);
+        }
+        a:active
+        {
+            position: relative;
+            top: 1px;
         }
     }
 }

@@ -11,7 +11,7 @@ var app = express();
 // mongoose.connect(database.url);
 
 // For local testing
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 // Serve static files
 app.use(express.static(__dirname + '/public'));
@@ -23,5 +23,5 @@ app.get('*', function(req, res) {
 
 // Wait for requests
 app.listen(PORT, function() {
-  console.log('Server is listening...')
+  console.log('Server is listening on port ' + PORT)
 });
