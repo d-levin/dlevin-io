@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>GearTracker</title>
-    <meta name="description" content="Keep track of your gear and creating packing lists with GearTracker">
+    <meta name="description" content="Keep track of your gear and create custom packing lists with GearTracker">
     <meta name="author" content="Dennis Levin">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300,100' rel="stylesheet" type="text/css">
@@ -16,70 +16,93 @@
 <body>
     <div id="wrapper">
         <header>
-            <h1 class="title">
-                <a href="#">
-                    <i class="fa fa-balance-scale fa-fw"></i>
-                    <span class="pad">GearTracker</span>
-                </a>
-            </h1>
-            <ul id="navigation">
-                <li>
+            <div>
+                <h1 class="title">
+                    <a href="#">
+                        <i class="fa fa-balance-scale fa-fw"></i>
+                        <span class="pad">GearTracker</span>
+                    </a>
+                </h1>
+            </div>
+            <div>
+                <ul id="navigation">
                     <a href="#" class="hidden">
                         <i class="fa fa-bars fa-fw"></i>
                     </a>
-                </li>
-                <li>
-                    <a href="#" class="hidden-false">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#" class="hidden-false">Gear Closet</a>
-                </li>
-                <li>
-                    <a href="#" class="hidden-false">Settings</a>
-                </li>
-                <li>
-                    <a href="#" class="hidden-false">Sign out</a>
-                </li>
-            </ul>
+                    <li>
+                        <a href="#" class="hidden-false">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hidden-false">Gear Closet</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hidden-false">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hidden-false">Sign out</a>
+                    </li>
+                </ul>
+            </div>
         </header>
         <main>
             <section id="my-lists">
                 <h4>My lists</h4>
                 <div class="section__container bottom-border">
                     <div class="list-item">
-                        <h5>List1</h5>
-                        <p class="list-description">This is my first list</p>
+                        <a href="#">
+                            <h5>List1</h5>
+                            <p class="list-description">This is my first list</p>
+                        </a>
                     </div>
                     <div class="list-item">
-                        <h5>List2</h5>
-                        <p class="list-description">This is my second list</p>
+                        <a href="#">
+                            <h5>List2</h5>
+                            <p class="list-description">This is my second list</p>
+                        </a>
                     </div>
                     <div class="list-item">
-                        <h5>List3</h5>
-                        <p class="list-description">This is my third list</p>
+                        <a href="#">
+                            <h5>List3</h5>
+                            <p class="list-description">This is my third list</p>
+                        </a>
                     </div>
                     <div class="list-item">
-                        <h5>List4</h5>
-                        <p class="list-description">This is my fourth list</p>
+                        <a href="#">
+                            <h5>List4</h5>
+                            <p class="list-description">This is my fourth list</p>
+                        </a>
                     </div>
                     <div class="list-item">
-                        <h5>List5</h5>
-                        <p class="list-description">This is my fifth list</p>
+                        <a href="#">
+                            <h5>List5</h5>
+                            <p class="list-description">This is my fifth list</p>
+                        </a>
                     </div>
                     <div class="list-item">
-                        <h5>List6</h5>
-                        <p class="list-description">This is my sixth list</p>
+                        <a href="#">
+                            <h5>List6</h5>
+                            <p class="list-description">This is my sixth list</p>
+                        </a>
                     </div>
                 </div>
                 <ul id="list-options">
                     <li>
-                        <a href="#">Create new list</a>
+                        <a href="#">
+                            <i class="fa fa-file-text"></i>
+                            <span class="icon-pad underline">Create new list</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Delete list</a>
+                        <a href="#">
+                            <i class="fa fa-trash"></i>
+                            <span class="icon-pad underline">Delete list</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Edit list</a>
+                        <a href="#">
+                            <i class="fa fa-pencil"></i>
+                            <span class="icon-pad underline">Edit list</span>
+                        </a>
                     </li>
                 </ul>
             </section>
@@ -88,21 +111,31 @@
                 <div class="section__container">
                     <ul class="misc__items">
                         <li>
-                            <a href="#">Gear closet</a>
+                            <a href="#">
+                                <i class="fa fa-archive"></i>
+                                <span class="icon-pad">Gear closet</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Categories</a>
+                            <a href="#">
+                                <i class="fa fa-tags"></i>
+                                <span class="icon-pad">Categories</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Reports</a>
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span class="icon-pad">Reports</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </section>
         </main>
         <footer>
-            <p>Created by
-                <a href="/contact/">Dennis Levin</a>, 2016</p>
+            <p>Created in 2016 by
+                <a href="#">Dennis Levin</a>
+            </p>
             <ul>
                 <li>
                     <a href="#">Help</a>

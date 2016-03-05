@@ -92,13 +92,13 @@ body
 {
     position: relative;
 
-    max-width: 1200px;
+    max-width: 90em;
     min-height: 100%;
     margin: 0 auto;
 
     background-color: $beige;
 
-    @include box-shadow(0, 0, 16px, rgba(0, 0, 0, .15));
+    @include box-shadow(0, 0, 1em, rgba(0, 0, 0, .15));
     > *
     {
         width: 100%;
@@ -142,6 +142,13 @@ header
     }
 }
 
+/* Remove gap between inline-block elements */
+header,
+footer
+{
+    font-size: 0;
+}
+
 /*=====  End of Typography  ======*/
 
 
@@ -152,10 +159,12 @@ header
 
 header
 {
+    overflow: auto;
+
     background-color: $dark-gray;
 
     @include box-shadow-spread(0, 2px, 3px, 0, rgba(0,0,0,.2));
-    > *
+    > div
     {
         display: inline-block;
 
@@ -165,6 +174,7 @@ header
     }
     .title
     {
+        float: left;
         .pad
         {
             padding-left: 8px;
@@ -172,7 +182,7 @@ header
     }
     #navigation
     {
-        font-size: 0;
+        float: right;
 
         text-align: right;
         text-transform: uppercase;
@@ -218,15 +228,6 @@ header
 /*=====  End of Header styles  ======*/
 
 
-/* Remove gap between inline-block elements */
-
-header,
-footer
-{
-    font-size: 0;
-}
-
-
 
 /*===================================
 =            Main styles            =
@@ -235,7 +236,6 @@ footer
 main
 {
     font-weight: 300;
-    //overflow: auto;
 
     padding-bottom: 100px !important; // why important here
 
@@ -246,12 +246,12 @@ section
 {
     position: relative;
 
-    margin-top: 30px;
+    margin-top: 1.875em;
 
     border: $white-transparent-border;
     background-color: rgba(255, 255, 255, .2);
 
-    @include box-shadow(0, 0, 10px, rgba(0, 0, 0, .05));
+    @include box-shadow(0, 0, .625em, rgba(0, 0, 0, .1));
     @include border-radius($section-border-radius);
     .section__container
     {
@@ -263,6 +263,15 @@ section
     .bottom-border
     {
         border-bottom: $white-transparent-border;
+    }
+    .icon-pad
+    {
+        padding-left: .1875em;
+    }
+    /* Selective underlining excluding image */
+    .underline:hover
+    {
+        text-decoration: underline;
     }
     h4
     {
@@ -345,17 +354,12 @@ section
 
         color: $dark-gray;
     }
-    a:hover
-    {
-        text-decoration: underline;
-    }
 }
 
 #misc
 {
     .misc__items
     {
-        //font-size: 0;
         display: -webkit-flex;
         display:         flex;
                 flex-direction: row;
@@ -413,7 +417,6 @@ section
         }
     }
 }
-
 
 /*=====  End of Main styles  ======*/
 

@@ -26,13 +26,13 @@ body {
 
 #wrapper {
   position: relative;
-  max-width: 1200px;
+  max-width: 90em;
   min-height: 100%;
   margin: 0 auto;
   background-color: #f2efe8;
-  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15); }
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.15); }
   #wrapper > * {
     width: 100%;
     padding: 15px; }
@@ -58,23 +58,31 @@ header .title {
   header .title a {
     color: #fff; }
 
+/* Remove gap between inline-block elements */
+header,
+footer {
+  font-size: 0; }
+
 /*=====  End of Typography  ======*/
 /*=====================================
 =            Header styles            =
 =====================================*/
 header {
+  overflow: auto;
   background-color: #313837;
   -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); }
-  header > * {
+  header > div {
     display: inline-block;
     width: 50%;
     vertical-align: middle; }
-  header .title .pad {
-    padding-left: 8px; }
+  header .title {
+    float: left; }
+    header .title .pad {
+      padding-left: 8px; }
   header #navigation {
-    font-size: 0;
+    float: right;
     text-align: right;
     text-transform: uppercase; }
     header #navigation > * {
@@ -101,11 +109,6 @@ header {
       top: 1px; }
 
 /*=====  End of Header styles  ======*/
-/* Remove gap between inline-block elements */
-header,
-footer {
-  font-size: 0; }
-
 /*===================================
 =            Main styles            =
 ===================================*/
@@ -116,21 +119,26 @@ main {
 
 section {
   position: relative;
-  margin-top: 30px;
+  margin-top: 1.875em;
   border: 1px solid rgba(255, 255, 255, 0.6);
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  background-clip: padding-box; }
+  background-clip: padding-box;
+  /* Selective underlining excluding image */ }
   section .section__container {
     overflow: auto;
     width: 100%;
     padding: 20px; }
   section .bottom-border {
     border-bottom: 1px solid rgba(255, 255, 255, 0.6); }
+  section .icon-pad {
+    padding-left: .1875em; }
+  section .underline:hover {
+    text-decoration: underline; }
   section h4 {
     font-size: 16px;
     font-weight: 700;
@@ -183,8 +191,6 @@ section {
   font-weight: 400;
   display: block;
   color: #313837; }
-#my-lists a:hover {
-  text-decoration: underline; }
 
 #misc .misc__items {
   display: -webkit-flex;

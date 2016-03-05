@@ -1,0 +1,34 @@
+{
+    "users": [{
+        "username": "dennis",
+        "password": "shitfuck",
+        "lists": [{
+            "name": "JMT",
+            "description": "list for 3 weeks on the JMT",
+            "items": {
+                "$ref": "#/items[0]"
+            }
+        }, {
+            "name": "Mountaineering",
+            "description": "list for brutal shit"
+        }],
+        "items": [{
+            "name": "patagonia crew shirt",
+            "description": "medium gray",
+            "img-url": "/",
+            "weight": "3.5"
+        }, {
+            "name": "patagonia crew shirt",
+            "description": "medium gray",
+            "img-url": "/",
+            "weight": "3.5"
+        }]
+    }, {
+        "username:herbert": {},
+        "password:imacunt": {},
+        "lists": [{
+            "name": "l1",
+            "description": "testlist l1"
+        }]
+    }]
+}
