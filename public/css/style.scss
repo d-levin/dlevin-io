@@ -16,6 +16,7 @@ $white-transparent-border: 1px solid rgba(255, 255, 255, .6);
 $list-margin: 20px;
 $section-border-radius: 3px;
 $transition: .15s ease;
+
 @mixin box-sizing($box-model)
 {
     -webkit-box-sizing: $box-model;
@@ -82,17 +83,10 @@ body
 
 body
 {
-    font-family: $default-font-family;
-    font-weight: 700;
-    //background-color: $light-blue;
-
     background-color: #f3f2ef;
 }
 
-a
-{
-    text-decoration: none;
-}
+
 
 #wrapper
 {
@@ -115,26 +109,24 @@ a
 
 /*=====  End of Universal styles  ======*/
 
+/*==================================
+=            Typography            =
+==================================*/
 
-/*=====================================
-=            Header styles            =
-=====================================*/
+body
+{
+    font-family: $default-font-family;
+    font-size: $default-font-size;
+    font-weight: 700;
+}
+
+a
+{
+    text-decoration: none;
+}
 
 header
 {
-    background-color: $dark-gray;
-
-    @include box-shadow-spread(0, 2px, 3px, 0, rgba(0,0,0,.2));
-    > *
-    {
-        font-size: $default-font-size;
-
-        display: inline-block;
-
-        min-width: 50%;
-
-        vertical-align: middle;
-    }
     .title
     {
         font-size: 44px;
@@ -147,6 +139,32 @@ header
         {
             color: #fff;
         }
+    }
+}
+
+/*=====  End of Typography  ======*/
+
+
+
+/*=====================================
+=            Header styles            =
+=====================================*/
+
+header
+{
+    background-color: $dark-gray;
+
+    @include box-shadow-spread(0, 2px, 3px, 0, rgba(0,0,0,.2));
+    > *
+    {
+        display: inline-block;
+
+        width: 50%;
+
+        vertical-align: middle;
+    }
+    .title
+    {
         .pad
         {
             padding-left: 8px;
@@ -209,62 +227,6 @@ footer
 }
 
 
-/*=====================================
-=            Footer styles            =
-=====================================*/
-
-footer
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    background-color: $salmon;
-
-    @include box-shadow-spread(0, -2px, 3px, 0, rgba(0,0,0,.1));
-    ul
-    {
-        font-size: 0;
-
-        width: 100%;
-
-        text-align: right;
-        li
-        {
-            font-size: $default-font-size;
-
-            display: inline-block;
-
-            padding: 0 15px;
-
-            border-right: 1px solid rgba(255, 255, 255, .9);
-        }
-        li:last-child
-        {
-            padding-right: 0;
-
-            border-right: none;
-        }
-        a
-        {
-            font-family: $default-font-family;
-            font-size: 14px;
-            font-weight: 400;
-
-            display: block;
-
-            color: #fff;
-        }
-        a:hover
-        {
-            text-decoration: underline;
-        }
-    }
-}
-
-
-/*=====  End of Footer styles  ======*/
-
 
 /*===================================
 =            Main styles            =
@@ -273,8 +235,7 @@ footer
 main
 {
     font-weight: 300;
-
-    overflow: auto;
+    //overflow: auto;
 
     padding-bottom: 100px !important; // why important here
 
@@ -294,23 +255,10 @@ section
     @include border-radius($section-border-radius);
     .section__container
     {
-        display: inline-block;
         overflow: auto;
 
         width: 100%;
         padding: 20px;
-    }
-    .section__container:after
-    {
-        font-size: 0;
-
-        display: block;
-        visibility: hidden;
-        clear: both;
-
-        height: 0;
-
-        content: ' ';
     }
     .bottom-border
     {
@@ -336,6 +284,18 @@ section
 
 #my-lists
 {
+    .section__container
+    {
+        display: -webkit-flex;
+        display:         flex;
+                flex-direction: row;
+
+        -webkit-flex-direction: row;
+        -webkit-justify-content: flex-start;
+                justify-content: flex-start;
+        -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+    }
     .list-item
     {
         float: left;
@@ -395,12 +355,23 @@ section
 {
     .misc__items
     {
-        font-size: 0;
+        //font-size: 0;
+        display: -webkit-flex;
+        display:         flex;
+                flex-direction: row;
+
+        width: 100%;
+
+        -webkit-flex-direction: row;
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+        -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
         li
         {
             display: inline-block;
 
-            min-width: 25%;
+            width: 25%;
             margin-right: 20px;
 
             text-align: center;
@@ -445,6 +416,69 @@ section
 
 
 /*=====  End of Main styles  ======*/
+
+/*=====================================
+=            Footer styles            =
+=====================================*/
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: $salmon;
+
+    @include box-shadow-spread(0, -2px, 3px, 0, rgba(0,0,0,.1));
+    > *
+    {
+        font-size: $default-font-size;
+
+        display: inline-block;
+
+        min-width: 50%;
+
+        vertical-align: middle;
+    }
+    p,
+    a
+    {
+        font-size: 14px;
+        font-weight: 400;
+
+        color: #fff;
+    }
+    a:hover
+    {
+        text-decoration: underline;
+    }
+    ul
+    {
+        font-size: 0;
+
+        text-align: right;
+        li
+        {
+            font-size: $default-font-size;
+
+            display: inline-block;
+
+            padding: 0 15px;
+
+            border-right: 1px solid rgba(255, 255, 255, .9);
+        }
+        li:last-child
+        {
+            padding-right: 0;
+
+            border-right: none;
+        }
+    }
+}
+
+
+/*=====  End of Footer styles  ======*/
+
 
 /*=====================================
 =            Media queries            =
