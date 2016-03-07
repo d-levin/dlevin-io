@@ -6,6 +6,6 @@
   "main": "server.js",
   "dependencies": {
     "express": "4.13.x",
-    "mongoose": "4.4.x"
+    "mysql": "2.10.2"
   }
 }

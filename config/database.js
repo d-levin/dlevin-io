@@ -1,3 +1,15 @@
+// Database dependency
+var mysql = require('mysql');
+
 module.exports = {
-  url: 'localhost:27017'
+    var config = {
+        mysql_pool: mysql.createPool({
+            connectionLimit: 10,
+            host: 'localhost',
+            port: '8889',
+            user: 'root',
+            password: 'root',
+            database: 'mydb'
+        })
+    }
 };
