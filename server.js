@@ -2,6 +2,10 @@
 const express = require('express');
 // MySQL
 const mysql = require('mysql');
+// Logins
+const passportLocal = require('passport-local');
+const passportFB = require('passport-facebook');
+const passportGoogle = require('passport-google-oauth');
 
 // Create app with Express
 var app = express();
